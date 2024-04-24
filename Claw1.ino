@@ -49,6 +49,8 @@ void setup()
   pinMode(PWMB, OUTPUT);
   
   pinMode(coin, INPUT); // initialize coin as an input
+  
+  pinMode(4, OUTPUT);
 
   Serial.println("Enter a direction.");
   Serial.println("F = forward, B = backward, R = right, L = left");
@@ -57,46 +59,65 @@ void setup()
 
 void loop() 
 {
-  // if (digitalRead(coin) == HIGH)
+  if (digitalRead(coin) == LOW)
   {
+    Serial.println("Coin Detected");
     if (Serial.available() > 0) 
     {
       botDirection = Serial.readStringUntil(' ');                 
-      Serial.print(botDirection);
+
 
       int mSpeed = 200;
 
       if (botDirection == "R")                         
         {
-          MotorX(mSpeed);                                    
+          Serial.print(botDirection);
+          MotorX(mSpeed);   
+          delay(1000);
+          MotorX(0);                                 
         }
 
       else if (botDirection == "L")                   
         {
+          Serial.print(botDirection);
           MotorX(-mSpeed);                                                              
+          delay(1000);
+          MotorX(0);                                 
         }
 
       else if (botDirection == "B")                     
         {
+          Serial.print(botDirection);
           MotorY(mSpeed);                                                               
+          delay(1000);
+          MotorY(0);                                 
         }
 
       else if (botDirection == "F")                 
         {
+          Serial.print(botDirection);
           MotorY(-mSpeed);                                                              
+          delay(00);
+          MotorY(0);                                 
         }
 
-      else if ()
-      {
+      else if (botDirection == "D")
 
+      {
+        Serial.print(botDirection);
+        digitalWrite(4, HIGH);
+        delay(1000);
+        digitalWrite(4, LOW);
       }
     }
-    else
-    {
-      MotorX(0);
-      MotorY(0);
-    }
   }
+  else
+  {
+    Serial.println("S");
+    MotorX(0);
+    MotorY(0);
+  }
+  
   
 }
 
@@ -105,7 +126,6 @@ void loop()
 /********************************************************************************/
 void MotorX(int motorSpeed)                       
 {
-  Serial.println("MotorX");
   if (motorSpeed > 0)                                 
   {
     digitalWrite(AIN1, HIGH);                         
