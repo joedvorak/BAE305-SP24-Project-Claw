@@ -61,7 +61,7 @@ void setup()
 
 void loop() 
 {
-  if (digitalRead(2) == HIGH)
+  if (digitalRead(2) == HIGH) // run loop when communication is received from arduino 1
   {                                           
     //if (Serial.available() > 0)                         
     //{
@@ -116,10 +116,4 @@ void MotorZ(int motorSpeed)
     digitalWrite(AIN2, LOW);                          
   }
   analogWrite(PWMA, abs(motorSpeed));                 
-}
-
-/********************************************************************************/
-void Servo(int motorSpeed)                       
-{
-                  
 }
