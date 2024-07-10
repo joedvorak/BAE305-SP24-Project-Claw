@@ -13,6 +13,8 @@ The purpose of this project was to create a functional claw machine. As a group,
 
 During this project, we were also introduced to "scrum". Scrum is commonly used in settings where groups are working on a large project together. Scrum encourages communication and frequent project updates between team members which in turn can increase the efficiency of teamwork. As a result, we were able to practice efficient communication as a team. Being able to communicate interpersonally is an important skill for many jobs, so practicing it now was a valuable experience.
 
+Project Video Description: [BAE 305 Final Project - Claw Machine](https://www.youtube.com/watch?v=2Kz2KVocflk)
+
 ## Design Description
 
 ### Box
